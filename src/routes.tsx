@@ -12,6 +12,7 @@ import keycloak, { onKeycloakEvent } from "./providers/KeycloakProvider"
 import Login from "./features/login/Login"
 import User from "./features/users/User"
 import Home from "./features/home/Home"
+import Trips from "./features/trips/Trips"
 
 function AppRoutes() {
   const { keycloak } = useKeycloak()
@@ -20,6 +21,7 @@ function AppRoutes() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
+        <Route path="/trips" element={<Trips />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route

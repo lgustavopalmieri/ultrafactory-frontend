@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  ultrafactory-frontend-service:
+    image: ultrafactory-frontend-image
+    container_name: ultrafactory-frontend-container
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    env_file:
+      - .env
+    ports:
+      - 5173:5173
+    volumes:
+      - .:/app
+    networks:
+      - kong-fc
+
+networks:
+  kong-fc:
+    external: true
