@@ -1,14 +1,12 @@
-import * as React from "react"
 import {
   createBrowserRouter,
   createRoutesFromElements,
-  Outlet,
   Route,
   RouterProvider,
 } from "react-router-dom"
 import ProtectedRoute from "./components/ProtectedRoute"
 import { ReactKeycloakProvider, useKeycloak } from "@react-keycloak/web"
-import keycloak, { onKeycloakEvent } from "./providers/KeycloakProvider"
+import keycloak from "./providers/KeycloakProvider"
 import Login from "./features/login/Login"
 import User from "./features/users/User"
 import Home from "./features/home/Home"

@@ -7,9 +7,7 @@ const keycloakConfig = {
 }
 const keycloak = new Keycloak(keycloakConfig)
 
-export const onKeycloakEvent = (eventType: string) => {
-  const errorEvents = ["onAuthError", "onAuthLogout", "onAuthRefreshError"]
-  if (!errorEvents.includes(eventType)) return
+export const onKeycloakEvent = () => {
   keycloak.login()
 }
 
