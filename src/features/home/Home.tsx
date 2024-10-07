@@ -5,7 +5,7 @@ interface IHomeProps {}
 const Home: React.FunctionComponent<IHomeProps> = props => {
 
   return (
-   <div>Home</div>
+   <div>Home page</div>
   )
 }
 
