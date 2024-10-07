@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     react(),
     nodePolyfills({
-      protocolImports: true,
+      protocolImports: false,
     }),
   ],
   server: {
@@ -21,6 +21,15 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        // Certifique-se de que todos os caminhos relativos estejam corretos
+        // durante o processo de build
+        manualChunks: undefined,
+      },
     },
   },
   // test: {

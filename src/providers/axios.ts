@@ -1,18 +1,12 @@
 import axios, { InternalAxiosRequestConfig } from "axios"
-import keycloak from "./KeycloakProvider"
+import { ACCOUNTS_HOST } from "./constants/accounts"
 
-const host = "http://localhost:4000/"
-
-const api = axios.create({
-  baseURL: `${host}`,
+const accountsApi = axios.create({
+  baseURL: `${ACCOUNTS_HOST}`,
 })
 
-api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
-  if (keycloak.token) {
-    console.log(keycloak.token)
-    config.headers.Authorization = `Bearer ${keycloak.token}`
-  }
+accountsApi.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   return config
 })
 
-export default api
+export default accountsApi

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ultrafactory-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ultrafactory-frontend
+  template:
+    metadata:
+      labels:
+        app: ultrafactory-frontend
+    spec:
+      containers:
+        - name: ultrafactory-frontend
+          image: lgustavopalmieri/ultrafactory-frontend
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ultrafactory-frontend-service
+spec:
+  selector:
+    app: ultrafactory-frontend
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+      protocol: TCP
+      # nodePort: 30001
+      # USE CALICO
