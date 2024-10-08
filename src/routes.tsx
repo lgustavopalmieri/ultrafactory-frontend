@@ -7,14 +7,17 @@ import {
 } from "react-router-dom"
 import Home from "./features/home/Home"
 import Layout from "./components/Layout/Layout"
+import InitialPage from "./features/initial-page/InitialPage"
 
 function AppRoutes() {
-
   const router = createBrowserRouter(
     createRoutesFromElements(
-    <Route element={<Layout children={< Outlet/>} data-testid="app" />}>
-      <Route path="/" element={<Home />} />
-    </Route>
+      <Route>
+        <Route path="/" element={<InitialPage />} />
+        <Route element={<Layout children={<Outlet />} data-testid="app" />}>
+          <Route path="/home" element={<Home />} />
+        </Route>
+      </Route>,
     ),
   )
 
@@ -22,9 +25,7 @@ function AppRoutes() {
 }
 
 function Routes() {
-  return (
-    <AppRoutes />
-  )
+  return <AppRoutes />
 }
 
 export default Routes

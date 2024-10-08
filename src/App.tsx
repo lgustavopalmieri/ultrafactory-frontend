@@ -1,7 +1,14 @@
+import { CssBaseline, ThemeProvider } from "@mui/material"
 import Routes from "./routes"
+import { darkTheme } from "./styles/theme/theme.config"
 
 const App = () => {
-  return <Routes />
+  return (
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <Routes />
+    </ThemeProvider>
+  )
 }
 
 export default App
