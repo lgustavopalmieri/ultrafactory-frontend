@@ -5,6 +5,12 @@ import SpeedIcon from "@mui/icons-material/Speed"
 
 interface IInitialPageProps {}
 
+// feature/ULT0001-account-page
+// should refactor initial page componentising InitialPage
+// should create an create account page with an form
+// and ultrafactory plans to be enrolled.
+// should coding also the backend
+
 const InitialPage: React.FunctionComponent<IInitialPageProps> = props => {
   return (
     <Container maxWidth="md">
