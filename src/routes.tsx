@@ -1,18 +1,20 @@
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Outlet,
   Route,
   RouterProvider,
 } from "react-router-dom"
 import Home from "./features/home/Home"
+import Layout from "./components/Layout/Layout"
 
 function AppRoutes() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route>
-        <Route path="/" element={<Home />} />
-      </Route>,
+    <Route element={<Layout children={< Outlet/>} data-testid="app" />}>
+      <Route path="/" element={<Home />} />
+    </Route>
     ),
   )
 
