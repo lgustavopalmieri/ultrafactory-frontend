@@ -27,7 +27,7 @@ const InitialPage: React.FunctionComponent<IInitialPageProps> = props => {
         </Typography>
 
         <Typography variant="h6" color="textSecondary" paragraph>
-          Equipment Monitoring and Insights
+          Equipment Effectiveness and Monitoring Insights
         </Typography>
 
         <Typography variant="body1" color="textSecondary" sx={{ mb: 4 }}>
