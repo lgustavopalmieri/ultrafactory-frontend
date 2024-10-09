@@ -2,11 +2,11 @@ const PORTUGUESE_COVER_PAGE = {
   title: "Ultrafactory",
   subtitle: "Eficácia e Monitoramento de Equipamentos",
   brief:
-    "Gerencie seus processos de forma simples com insights em tempo real e análises avançadas para melhorar a produtividade.",
+    "Gerencie seus processos de forma simples com insights em tempo real e análises para melhorar a produtividade.",
   leftCard: {
     title: "Monitoramento em Tempo Real",
     brief:
-      "Receba atualizações ao vivo sobre todos os seus processos para se manter à frente e tomar decisões rápidas.",
+      "Receba atualizações sobre todos os seus processos para se manter à frente e tomar decisões rápidas.",
   },
   rightCard: {
     title: "Análises Avançadas",

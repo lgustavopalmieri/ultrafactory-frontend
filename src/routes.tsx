@@ -16,7 +16,11 @@ function AppRoutes() {
       <Route>
         <Route path="/" element={<CoverPage />} />
         <Route path="/create-account" element={<CreateAccount />} />
-        <Route element={<Layout children={<Outlet />} data-testid="app" />}>
+        <Route
+          path="/login"
+          element={<div data-testid="login-page">Login Page</div>}
+        />
+        <Route element={<Layout children={<Outlet />} />}>
           <Route path="/home" element={<Home />} />
         </Route>
       </Route>,

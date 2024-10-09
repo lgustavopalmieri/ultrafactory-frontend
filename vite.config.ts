@@ -1,3 +1,6 @@
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
 import path from "path"
 import { defineConfig } from "vitest/config"
 import react from "@vitejs/plugin-react"
@@ -26,16 +29,14 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        // Certifique-se de que todos os caminhos relativos estejam corretos
-        // durante o processo de build
         manualChunks: undefined,
       },
     },
   },
-  // test: {
-  //   globals: true,
-  //   environment: "jsdom",
-  //   setupFiles: "src/setupTests",
-  //   mockReset: true,
-  // },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./src/setupTests",
+    mockReset: true,
+  },
 })
