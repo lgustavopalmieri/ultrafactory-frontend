@@ -1,3 +1,6 @@
+//¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+//⚙️---⚙️---⚙️ Powered by Ultrafactory Software Solutions 2024 ⚙️---⚙️---⚙️ 
+//____________________________________________________________________
 import { createTheme } from "@mui/material"
 
 export const darkTheme = createTheme({
@@ -17,6 +20,9 @@ export const darkTheme = createTheme({
     },
     secondary: {
       main: "#00bcd4",
+      light: "#62efff",
+      dark: "#045D75",
+      contrastText: "#ffffff",
     },
     text: {
       primary: "#FFFFFF",

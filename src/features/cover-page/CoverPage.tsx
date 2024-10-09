@@ -1,4 +1,15 @@
-import { Box, Button, Typography, Container, Grid, Paper } from "@mui/material"
+//¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+//⚙️---⚙️---⚙️ Powered by Ultrafactory Software Solutions 2024 ⚙️---⚙️---⚙️
+//____________________________________________________________________
+import {
+  Box,
+  Button,
+  Typography,
+  Container,
+  Grid,
+  Paper,
+  useTheme,
+} from "@mui/material"
 import { Link } from "react-router-dom"
 import InsightsIcon from "@mui/icons-material/Insights"
 import SpeedIcon from "@mui/icons-material/Speed"
@@ -13,12 +24,13 @@ import { LANGUAGES } from "@/constants/languages"
 // should coding also the backend
 
 const CoverPage: React.FunctionComponent = () => {
+  const theme = useTheme()
   const { languageSelected } = useAppSelector(state => state.languages)
   return (
     <div
       style={{
         background:
-          "linear-gradient(-190deg, rgba(30, 30, 30, 0.8), rgba(0, 188, 212, 1), rgba(0, 188, 212, 0.4), rgba(30, 30, 30, 1))",
+          "linear-gradient(-190deg, rgba(0, 188, 212, 1), rgba(30, 30, 30, 1))",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -87,18 +99,24 @@ const CoverPage: React.FunctionComponent = () => {
               size="large"
               component={Link}
               to="/create-account"
-              sx={{ mb: 2, width: "100%" }}
+              sx={{
+                mb: 2,
+                width: "100%",
+                backgroundColor: theme.palette.secondary.light,
+              }}
             >
               {LANGUAGES[languageSelected].coverPage.createAccountButton}
             </Button>
 
             <Button
               variant="contained"
-              color="secondary"
+              color="primary"
               size="large"
               component={Link}
               to="/login"
-              sx={{ width: "100%" }}
+              sx={{
+                width: "100%",
+              }}
             >
               {LANGUAGES[languageSelected].coverPage.logInButton}
             </Button>

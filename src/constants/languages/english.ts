@@ -1,3 +1,6 @@
+//¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+//⚙️---⚙️---⚙️ Powered by Ultrafactory Software Solutions 2024 ⚙️---⚙️---⚙️ 
+//____________________________________________________________________
 const ENGLISH_COVER_PAGE = {
   title: "Ultrafactory",
   subtitle: "Equipment Effectiveness and Monitoring Insights",

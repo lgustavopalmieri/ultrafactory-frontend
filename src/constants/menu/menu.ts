@@ -1,6 +1,9 @@
+//¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+//⚙️---⚙️---⚙️ Powered by Ultrafactory Software Solutions 2024 ⚙️---⚙️---⚙️ 
+//____________________________________________________________________
 import { LANGUAGES, LanguagesType } from "../languages"
 
-export const MENU_BUTTONS = (language: LanguagesType ) => {
+export const MENU_BUTTONS = (language: LanguagesType) => {
   return [
     {
       path: "/home",
