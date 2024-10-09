@@ -1,20 +1,27 @@
 import { useState } from "react"
 import { darkTheme } from "@/styles/theme/theme.config"
-import { AppBar, Toolbar, IconButton, Typography, Button } from "@mui/material"
-import LoginRoundedIcon from "@mui/icons-material/LoginRounded"
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Button,
+  Box,
+} from "@mui/material"
+import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded"
 import MenuIcon from "@mui/icons-material/Menu"
 import Drawer from "./Drawer"
+import Languages from "../Languages/Languages"
 
-interface IMenuProps {}
-
-const Menu: React.FunctionComponent<IMenuProps> = props => {
+const Menu: React.FunctionComponent = () => {
   const [drawerOpen, setDrawerOpen] = useState(false)
 
   const toggleDrawer = (open: boolean) => {
     setDrawerOpen(open)
   }
-  const handleLogin = () => {
-    console.log("Login button clicked")
+
+  const handleLogout = () => {
+    console.log("Logout button clicked")
   }
 
   return (
@@ -37,9 +44,12 @@ const Menu: React.FunctionComponent<IMenuProps> = props => {
             Ultrafactory
           </Typography>
 
-          <Button color="inherit" onClick={handleLogin}>
-            <LoginRoundedIcon />
-            {/* <LogoutRoundedIcon /> */}
+          <Box sx={{ display: "flex", alignItems: "center", mr: 2 }}>
+            <Languages />
+          </Box>
+
+          <Button color="inherit" onClick={handleLogout}>
+            <LogoutRoundedIcon />
           </Button>
         </Toolbar>
       </AppBar>

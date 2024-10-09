@@ -2,16 +2,18 @@ import { Box, Button, Typography, Container, Grid, Paper } from "@mui/material"
 import { Link } from "react-router-dom"
 import InsightsIcon from "@mui/icons-material/Insights"
 import SpeedIcon from "@mui/icons-material/Speed"
-
-interface IInitialPageProps {}
+import Languages from "@/components/Languages/Languages"
+import { useAppSelector } from "@/app/hooks"
+import { LANGUAGES } from "@/constants/languages"
 
 // feature/ULT0001-account-page
-// should refactor initial page componentising InitialPage
+// should refactor initial page componentising CoverPage
 // should create an create account page with an form
 // and ultrafactory plans to be enrolled.
 // should coding also the backend
 
-const InitialPage: React.FunctionComponent<IInitialPageProps> = props => {
+const CoverPage: React.FunctionComponent = () => {
+  const { languageSelected } = useAppSelector(state => state.languages)
   return (
     <Container maxWidth="md">
       <Box
@@ -24,21 +26,24 @@ const InitialPage: React.FunctionComponent<IInitialPageProps> = props => {
           textAlign: "center",
         }}
       >
+        <Box sx={{ position: "absolute", top: 16, right: 16 }}>
+          <Languages />
+        </Box>
+
         <Typography
           variant="h2"
           gutterBottom
           sx={{ fontFamily: "Montserrat, Arial", fontWeight: "bold" }}
         >
-          Ultrafactory
+          {LANGUAGES[languageSelected].coverPage.title}
         </Typography>
 
         <Typography variant="h6" color="textSecondary" paragraph>
-          Equipment Effectiveness and Monitoring Insights
+          {LANGUAGES[languageSelected].coverPage.subtitle}
         </Typography>
 
         <Typography variant="body1" color="textSecondary" sx={{ mb: 4 }}>
-          Effortlessly manage your manufacturing processes with real-time
-          insights, advanced analytics to improve productivity.
+          {LANGUAGES[languageSelected].coverPage.brief}
         </Typography>
 
         <Grid container spacing={3} sx={{ mb: 4 }}>
@@ -46,11 +51,10 @@ const InitialPage: React.FunctionComponent<IInitialPageProps> = props => {
             <Paper elevation={3} sx={{ p: 2 }}>
               <SpeedIcon fontSize="large" color="secondary" />
               <Typography variant="h6" gutterBottom>
-                Real-time Monitoring
+                {LANGUAGES[languageSelected].coverPage.leftCard.title}
               </Typography>
               <Typography variant="body2">
-                Get live updates on all your processes to stay ahead and make
-                fast decisions.
+                {LANGUAGES[languageSelected].coverPage.leftCard.brief}
               </Typography>
             </Paper>
           </Grid>
@@ -59,11 +63,10 @@ const InitialPage: React.FunctionComponent<IInitialPageProps> = props => {
             <Paper elevation={3} sx={{ p: 2 }}>
               <InsightsIcon fontSize="large" color="secondary" />
               <Typography variant="h6" gutterBottom>
-                Advanced Analytics
+                {LANGUAGES[languageSelected].coverPage.rightCard.title}
               </Typography>
               <Typography variant="body2">
-                Analyze performance data and track key metrics to boost
-                efficiency.
+                {LANGUAGES[languageSelected].coverPage.rightCard.brief}
               </Typography>
             </Paper>
           </Grid>
@@ -75,10 +78,10 @@ const InitialPage: React.FunctionComponent<IInitialPageProps> = props => {
             color="primary"
             size="large"
             component={Link}
-            to="/signup"
+            to="/create-account"
             sx={{ mb: 2, width: "100%" }}
           >
-            Create Account
+            {LANGUAGES[languageSelected].coverPage.createAccountButton}
           </Button>
 
           <Button
@@ -89,7 +92,7 @@ const InitialPage: React.FunctionComponent<IInitialPageProps> = props => {
             to="/login"
             sx={{ width: "100%" }}
           >
-            Log In
+            {LANGUAGES[languageSelected].coverPage.logInButton}
           </Button>
         </Box>
       </Box>
@@ -97,4 +100,4 @@ const InitialPage: React.FunctionComponent<IInitialPageProps> = props => {
   )
 }
 
-export default InitialPage
+export default CoverPage

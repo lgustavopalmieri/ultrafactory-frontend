@@ -7,13 +7,15 @@ import {
 } from "react-router-dom"
 import Home from "./features/home/Home"
 import Layout from "./components/Layout/Layout"
-import InitialPage from "./features/initial-page/InitialPage"
+import CoverPage from "./features/cover-page/CoverPage"
+import CreateAccount from "./features/create-account/CreateAccount"
 
 function AppRoutes() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
-        <Route path="/" element={<InitialPage />} />
+        <Route path="/" element={<CoverPage />} />
+        <Route path="/create-account" element={<CreateAccount />} />
         <Route element={<Layout children={<Outlet />} data-testid="app" />}>
           <Route path="/home" element={<Home />} />
         </Route>

@@ -10,6 +10,7 @@ import {
 import CloseIcon from "@mui/icons-material/Close"
 import { Link } from "react-router-dom"
 import { MENU_BUTTONS } from "@/constants/menu/menu"
+import { useAppSelector } from "@/app/hooks"
 
 interface IDrawerProps {
   toggleDrawer: (open: boolean) => void
@@ -20,6 +21,8 @@ const Drawer: React.FunctionComponent<IDrawerProps> = ({
   toggleDrawer,
   drawerOpen,
 }: IDrawerProps) => {
+  const { languageSelected } = useAppSelector(state => state.languages)
+  const menuButtons = MENU_BUTTONS(languageSelected)
   return (
     <MaterialDrawer
       anchor="left"
@@ -39,7 +42,7 @@ const Drawer: React.FunctionComponent<IDrawerProps> = ({
 
         <Divider />
         <List>
-          {MENU_BUTTONS.map(button => (
+          {menuButtons.map(button => (
             <ListItemButton component={Link} to={button.path}>
               <ListItemText primary={button.title} />
             </ListItemButton>

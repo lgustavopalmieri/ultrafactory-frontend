@@ -1,8 +1,11 @@
 import type { Action, ThunkAction } from "@reduxjs/toolkit"
 import { combineSlices, configureStore } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
+import languagesReducer from "../components/Languages/languagesSlice"
 
-const rootReducer = combineSlices()
+const rootReducer = combineSlices({
+  languages: languagesReducer,
+})
 
 export type RootState = ReturnType<typeof rootReducer>
 
