@@ -10,6 +10,7 @@ interface IInputFieldProps {
   name: string
   value: any
   onChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>
+  required: boolean
 }
 
 const InputField: React.FunctionComponent<IInputFieldProps> = ({
@@ -18,6 +19,7 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
   name,
   value,
   onChange,
+  required,
 }: IInputFieldProps) => {
   return (
     <TextField
@@ -29,7 +31,7 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
       name={name}
       value={value}
       onChange={onChange}
-      required
+      required={required}
       sx={{
         backgroundColor: "#2B2B2B",
         color: "#EAEAEA",

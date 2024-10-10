@@ -17,12 +17,6 @@ import Languages from "@/components/Languages/Languages"
 import { useAppSelector } from "@/app/hooks"
 import { LANGUAGES } from "@/constants/languages"
 
-// feature/ULT0001-account-page
-// should refactor initial page componentising CoverPage
-// should create an create account page with an form
-// and ultrafactory plans to be enrolled.
-// should coding also the backend
-
 const CoverPage: React.FunctionComponent = () => {
   const theme = useTheme()
   const { languageSelected } = useAppSelector(state => state.languages)

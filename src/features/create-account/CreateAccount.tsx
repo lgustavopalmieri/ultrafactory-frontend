@@ -2,42 +2,16 @@
 //⚙️---⚙️---⚙️ Powered by Ultrafactory Software Solutions 2024 ⚙️---⚙️---⚙️
 //____________________________________________________________________
 import React, { useState } from "react"
-import { Box, Button, Typography, Grid, Paper } from "@mui/material"
-import { FreeBreakfast, Star, Payment } from "@mui/icons-material"
+import { Box, Button, Typography, Grid } from "@mui/material"
 import { Link } from "react-router-dom"
 import InputField from "@/components/InputField/InputField"
-
-const plans = [
-  {
-    title: "Free",
-    icon: <FreeBreakfast fontSize="large" />,
-    features: [
-      "Acesso a funcionalidades básicas",
-      "Suporte comunitário",
-      "Limite de usuários: 1",
-    ],
-  },
-  {
-    title: "Basic",
-    icon: <Star fontSize="large" />,
-    features: [
-      "Acesso a funcionalidades avançadas",
-      "Suporte prioritário",
-      "Limite de usuários: até 5",
-    ],
-  },
-  {
-    title: "Premium",
-    icon: <Payment fontSize="large" />,
-    features: [
-      "Acesso a todas as funcionalidades",
-      "Suporte dedicado 24/7",
-      "Limite de usuários: até 15",
-    ],
-  },
-]
+import PlanCard from "./components/PlanCard"
+import { useAppSelector } from "@/app/hooks"
+import { LANGUAGES } from "@/constants/languages"
 
 const SignUp = () => {
+  const { languageSelected } = useAppSelector(state => state.languages)
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -67,113 +41,77 @@ const SignUp = () => {
       }}
     >
       <Typography variant="h5" align="center" color="#EAEAEA">
-        Criar Conta
+        {LANGUAGES[languageSelected].createAccountPage.title}
       </Typography>
       <form onSubmit={handleSubmit}>
         <InputField
-          label="Nome"
+          label={LANGUAGES[languageSelected].createAccountPage.formLabels.name}
           name="firstName"
           value={formData.firstName}
           onChange={handleChange}
+          required
         />
         <InputField
-          label="Sobrenome"
+          label={
+            LANGUAGES[languageSelected].createAccountPage.formLabels.lastName
+          }
           name="lastName"
           value={formData.lastName}
           onChange={handleChange}
+          required
         />
         <InputField
-          label="Nome da Empresa"
+          label={
+            LANGUAGES[languageSelected].createAccountPage.formLabels.companyName
+          }
           name="companyName"
           value={formData.companyName}
           onChange={handleChange}
+          required
         />
         <InputField
           type="email"
-          label="Email"
+          label={LANGUAGES[languageSelected].createAccountPage.formLabels.email}
           name="email"
           value={formData.email}
           onChange={handleChange}
+          required
         />
 
         <Typography
           color="#EAEAEA"
           sx={{ marginTop: "2rem", marginBottom: "1rem" }}
         >
-          Escolha um Plano de Assinatura:
+          {LANGUAGES[languageSelected].createAccountPage.subscriptionText}
         </Typography>
         <Grid container spacing={2}>
-          {plans.map(plan => (
-            <Grid item xs={12} sm={4} key={plan.title}>
-              <Paper
-                elevation={3}
-                sx={{
-                  padding: "2rem",
-                  backgroundColor:
-                    formData.plan === plan.title.toLowerCase()
-                      ? "rgba(204, 85, 0, 0.2)" // Cor turquesa com opacidade baixa
-                      : "#2A2A2A", // Cor padrão para cards não selecionados
-                  color: "#EAEAEA",
-                  textAlign: "left",
-                  cursor: "pointer",
-                  minHeight: "15rem",
-                  transition: "background-color 0.3s ease",
-                  "&:hover": {
-                    backgroundColor:
-                      formData.plan === plan.title.toLowerCase()
-                        ? "rgba(255, 255, 255, 0.2)" // Um leve aumento na opacidade ao passar o mouse
-                        : "#333333", // Sutil mudança ao passar o mouse sobre cards não selecionados
-                  },
-                }}
-                onClick={() =>
-                  setFormData({ ...formData, plan: plan.title.toLowerCase() })
-                }
-              >
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    marginBottom: "1rem",
-                    "& svg": {
-                      color:
-                        formData.plan === plan.title.toLowerCase()
-                          ? "#00bcd4"
-                          : "#00bcd4", // Turquesa puro para ícones selecionados
-                      fontSize: "2rem",
-                    },
-                  }}
-                >
-                  {plan.icon}
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    sx={{ marginLeft: "1rem" }}
-                  >
-                    {plan.title}
-                  </Typography>
-                </Box>
-                <ul style={{ paddingLeft: "1rem" }}>
-                  {plan.features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul>
-              </Paper>
-            </Grid>
+          {LANGUAGES[
+            languageSelected
+          ].createAccountPage.formLabels.accountPlans.map(plan => (
+            <PlanCard
+              key={plan.title}
+              plan={plan}
+              selected={formData.plan}
+              onClick={() =>
+                setFormData({ ...formData, plan: plan.title.toLowerCase() })
+              }
+            />
           ))}
         </Grid>
 
         <Button
+          disabled={!formData.plan}
           type="submit"
           variant="contained"
           color="secondary"
           fullWidth
           sx={{ marginTop: "2rem" }}
         >
-          Criar Conta
+          {LANGUAGES[languageSelected].createAccountPage.createButton}
         </Button>
       </form>
       <Typography align="center" color="#B0B0B0" sx={{ marginTop: "1rem" }}>
-        Já tem uma conta?{" "}
+        {LANGUAGES[languageSelected].createAccountPage.alreadyHaveAnAccount}{" "}
         <Link
           to="/login"
           style={{
@@ -182,7 +120,7 @@ const SignUp = () => {
             fontWeight: "bold",
           }}
         >
-          Login
+          {LANGUAGES[languageSelected].createAccountPage.login}
         </Link>
       </Typography>
     </Box>
