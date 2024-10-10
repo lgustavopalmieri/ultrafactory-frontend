@@ -1,8 +1,7 @@
-//¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
-//⚙️---⚙️---⚙️ Powered by Ultrafactory Software Solutions 2024 ⚙️---⚙️---⚙️ 
-//____________________________________________________________________
+// ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+// ⚙️---⚙️---⚙️ Powered by Ultrafactory Software Solutions 2024 ⚙️---⚙️---⚙️
+// ____________________________________________________________________
 import { useState } from "react"
-import { darkTheme } from "@/styles/theme/theme.config"
 import {
   AppBar,
   Toolbar,
@@ -13,6 +12,7 @@ import {
 } from "@mui/material"
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded"
 import MenuIcon from "@mui/icons-material/Menu"
+import { darkTheme } from "@/styles/theme/theme.config"
 import Drawer from "./Drawer"
 import Languages from "../Languages/Languages"
 

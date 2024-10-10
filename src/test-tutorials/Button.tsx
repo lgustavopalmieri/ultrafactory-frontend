@@ -8,19 +8,17 @@ interface IButtonProps {
 const Button: React.FunctionComponent<IButtonProps> = ({
   text,
   onClick,
-}: IButtonProps) => {
-  return (
-    <MaterialButton
-      data-testid="button"
-      variant="outlined"
-      color="secondary"
-      size="large"
-      sx={{ width: "100%" }}
-      onClick={onClick}
-    >
-      {text}
-    </MaterialButton>
-  )
-}
+}: IButtonProps) => (
+  <MaterialButton
+    data-testid="button"
+    variant="outlined"
+    color="secondary"
+    size="large"
+    sx={{ width: "100%" }}
+    onClick={onClick}
+  >
+    {text}
+  </MaterialButton>
+)
 
 export default Button

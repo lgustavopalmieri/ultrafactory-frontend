@@ -36,7 +36,10 @@ module.exports = {
     ],
   },
   overrides: [
-    { files: ["*.{c,m,}{t,j}s", "*.{t,j}sx"] },
-    { files: ["*{test,spec}.{t,j}s?(x)"], env: { jest: true } },
+    { files: ["*.ts", "*.tsx"] },
+    {
+      files: ["*.test.ts", "*.test.tsx", "*.spec.ts", "*.spec.tsx"],
+      env: { jest: true },
+    },
   ],
 }

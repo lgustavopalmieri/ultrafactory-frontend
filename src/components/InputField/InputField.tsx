@@ -1,6 +1,6 @@
-//¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
-//⚙️---⚙️---⚙️ Powered by Ultrafactory Software Solutions 2024 ⚙️---⚙️---⚙️
-//____________________________________________________________________
+// ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+// ⚙️---⚙️---⚙️ Powered by Ultrafactory Software Solutions 2024 ⚙️---⚙️---⚙️
+// ____________________________________________________________________
 import { TextField } from "@mui/material"
 import * as React from "react"
 
@@ -20,32 +20,30 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
   value,
   onChange,
   required,
-}: IInputFieldProps) => {
-  return (
-    <TextField
-      fullWidth
-      type={type}
-      variant="outlined"
-      margin="normal"
-      label={label}
-      name={name}
-      value={value}
-      onChange={onChange}
-      required={required}
-      sx={{
-        backgroundColor: "#2B2B2B",
-        color: "#EAEAEA",
-        "& .MuiOutlinedInput-root": {
-          "& fieldset": {
-            borderColor: "#00bcd4",
-          },
-          "&:hover fieldset": {
-            borderColor: "#008ba3",
-          },
+}: IInputFieldProps) => (
+  <TextField
+    fullWidth
+    type={type}
+    variant="outlined"
+    margin="normal"
+    label={label}
+    name={name}
+    value={value}
+    onChange={onChange}
+    required={required}
+    sx={{
+      backgroundColor: "#2B2B2B",
+      color: "#EAEAEA",
+      "& .MuiOutlinedInput-root": {
+        "& fieldset": {
+          borderColor: "#00bcd4",
         },
-      }}
-    />
-  )
-}
+        "&:hover fieldset": {
+          borderColor: "#008ba3",
+        },
+      },
+    }}
+  />
+)
 
 export default InputField

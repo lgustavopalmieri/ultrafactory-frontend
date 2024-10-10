@@ -1,12 +1,12 @@
-//¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
-//⚙️---⚙️---⚙️ Powered by Ultrafactory Software Solutions 2024 ⚙️---⚙️---⚙️ 
-//____________________________________________________________________
-import { LanguagesType } from "@/constants/languages"
+// ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+// ⚙️---⚙️---⚙️ Powered by Ultrafactory Software Solutions 2024 ⚙️---⚙️---⚙️
+// ____________________________________________________________________
 import { createSlice } from "@reduxjs/toolkit"
+import { LanguagesType } from "@/constants/languages"
 
 const getInitialLanguage = () => {
   const savedLanguage = localStorage.getItem("languageSelected")
-  return savedLanguage ? savedLanguage : "english"
+  return savedLanguage || "english"
 }
 
 interface InitialStateInterface {

@@ -1,5 +1,3 @@
-const Testando: React.FunctionComponent = () => {
-  return <div>Working!</div>;
-};
+const Testando: React.FunctionComponent = () => <div>Working!</div>
 
-export default Testando;
+export default Testando
