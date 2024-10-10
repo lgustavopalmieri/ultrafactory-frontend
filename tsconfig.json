@@ -22,9 +22,10 @@
       "@/*": ["./src/*"]
     },
     "types": ["vitest/globals"],
-    "esModuleInterop": true 
+    "esModuleInterop": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts"],
-  "exclude": ["node_modules"],
+  // "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts"],
+  "include": ["src"],
+  // "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

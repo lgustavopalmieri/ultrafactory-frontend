@@ -1,0 +1,7 @@
+build
+build/
+node_modules/
+.gitignore
+.prettierignore
+dist
+package-lock.json
