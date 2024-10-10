@@ -12,7 +12,28 @@ module.exports = {
   rules: {
     "import/extensions": 0,
     "import/prefer-default-export": 0,
+    "react/function-component-definition": 0,
     "react/jsx-wrap-multilines": 0,
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        devDependencies: [
+          "**/*.test.ts",
+          "**/*.test.tsx",
+          "src/setupTests.ts",
+          "src/utils/test-utils.tsx",
+        ],
+      },
+    ],
+    "no-param-reassign": [
+      "error",
+      {
+        props: true,
+        ignorePropertyModificationsFor: ["state"],
+      },
+    ],
   },
   overrides: [
     { files: ["*.{c,m,}{t,j}s", "*.{t,j}sx"] },

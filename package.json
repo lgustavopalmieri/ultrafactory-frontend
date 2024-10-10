@@ -14,7 +14,7 @@
     "type-check": "tsc --noEmit",
     "prepare": "husky",
     "lint:check": "eslint \"src/**/*.{ts,tsx}\" && prettier --check \"src/**/*.{ts,tsx,css}\"",
-    "lint": "eslint \"src/**/*.{ts,tsx}\" --fix && prettier --write \"sec/**/*.{ts,tsx,css}\""
+    "lint": "eslint \"src/**/*.{ts,tsx}\" --fix && prettier --write \"src/**/*.{ts,tsx,css}\""
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",

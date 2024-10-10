@@ -1,14 +1,8 @@
 import "@testing-library/jest-dom"
-import { fireEvent, render, screen } from "@testing-library/react"
+import { fireEvent, render } from "@testing-library/react"
 import { describe, expect, test } from "vitest"
+import { MemoryRouter, Route, Routes, useNavigate } from "react-router-dom"
 import Button from "./Button"
-import {
-  Link,
-  MemoryRouter,
-  Route,
-  Routes,
-  useNavigate,
-} from "react-router-dom"
 
 const buttonTestID = "button"
 
